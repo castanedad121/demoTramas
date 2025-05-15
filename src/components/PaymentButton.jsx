@@ -99,9 +99,9 @@ const PaymentButton = ({ amount, merchantCodeT1, orderKey }) => {
     };
 
     const checkout = new window.Izipay({ config: paymentConfig });
-    console.log(`Data enviada a Izipay: ${paymentConfig}`);
+    console.log("🟢 Configuración enviada a Izipay Trama 1:", paymentConfig);
     const callbackResponsePayment = (response) => {
-      console.log(`Data recibida de Izipay: ${(response, null, 2)}`);
+      console.log("🔹 Respuesta de Izipay Trama 1:", response); // ✅ Ver en la consola
       if (paymentMessage) {
         //let formattedResponse = removeKeyRecursive(response, "payloadHttp");
         paymentMessage.innerHTML = JSON.stringify(response, null, 2);

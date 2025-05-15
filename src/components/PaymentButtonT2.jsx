@@ -129,13 +129,11 @@ const PaymentButtonT2 = ({ amount, customData, merchantCodeT2, orderKey }) => {
       ],
     };
 
-    console.log("🟢 Configuración enviada a Izipay Trama 2:", paymentConfig);
-
     const checkout = new window.Izipay({ config: paymentConfig });
 
     console.log("🟢 Configuración enviada a Izipay Trama 2:", paymentConfig);
     const callbackResponsePayment = (response) => {
-      console.log("🔹 Respuesta de Izipay:", response); // ✅ Ver en la consola
+      console.log("🔹 Respuesta de Izipay Trama 2:", response); // ✅ Ver en la consola
 
       if (paymentMessage) {
         // let formattedResponse = removeKeyRecursive(response, "payloadHttp");
