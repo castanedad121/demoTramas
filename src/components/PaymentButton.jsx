@@ -99,11 +99,12 @@ const PaymentButton = ({ amount, merchantCodeT1, orderKey }) => {
     };
 
     const checkout = new window.Izipay({ config: paymentConfig });
-
+    console.log(`Data enviada a Izipay: ${paymentConfig}`);
     const callbackResponsePayment = (response) => {
+      console.log(`Data recibida de Izipay: ${(response, null, 2)}`);
       if (paymentMessage) {
-        let formattedResponse = removeKeyRecursive(response, "payloadHttp");
-        paymentMessage.innerHTML = JSON.stringify(formattedResponse, null, 2);
+        //let formattedResponse = removeKeyRecursive(response, "payloadHttp");
+        paymentMessage.innerHTML = JSON.stringify(response, null, 2);
         objetConfig.innerHTML = JSON.stringify(paymentConfig, null, 2);
       }
     };

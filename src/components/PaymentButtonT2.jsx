@@ -138,10 +138,10 @@ const PaymentButtonT2 = ({ amount, customData, merchantCodeT2, orderKey }) => {
       console.log("🔹 Respuesta de Izipay:", response); // ✅ Ver en la consola
 
       if (paymentMessage) {
-        let formattedResponse = removeKeyRecursive(response, "payloadHttp");
+        // let formattedResponse = removeKeyRecursive(response, "payloadHttp");
 
         // Mostrar el JSON formateado en el frontend
-        paymentMessage.innerHTML = JSON.stringify(formattedResponse, null, 2);
+        paymentMessage.innerHTML = JSON.stringify(response, null, 2);
         objetConfig.innerHTML = JSON.stringify(paymentConfig, null, 2);
       }
     };
